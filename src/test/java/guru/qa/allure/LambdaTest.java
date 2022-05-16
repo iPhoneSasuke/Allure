@@ -15,8 +15,8 @@ import static io.qameta.allure.Allure.step;
 
 public class LambdaTest {
 
-    private static final String Repository = "iPhoneSasuke/JU5annotations";
-    private static final int Issue_Numb = 12;
+    private static final String REPOSITORY = "iPhoneSasuke/JU5annotations";
+    private static final int ISSUE_NUMB = 12;
 
     @BeforeAll
     public static void browConfig() {
@@ -33,19 +33,19 @@ public class LambdaTest {
         step("Открываем Гит", () -> {
             open("https://github.com/");
         });
-        step("Ищем репозиторий " + Repository, () -> {
+        step("Ищем репозиторий " + REPOSITORY, () -> {
             $(".header-search-input").click();
-            $(".header-search-input").sendKeys(Repository);
+            $(".header-search-input").setValue(REPOSITORY);
             $(".header-search-input").pressEnter();
         });
-        step("Переходим по ссылке репозитория " + Repository, () -> {
+        step("Переходим по ссылке репозитория " + REPOSITORY, () -> {
             $(byLinkText("iPhoneSasuke/JU5annotations")).click();
         });
         step("кликаем на таб Issues", () -> {
             $(byPartialLinkText("Issues")).click();
         });
-        step("Проверяем наличие Issue  с номером " + Issue_Numb, () -> {
-            $(withText("12")).click();
+        step("Проверяем наличие Issue  с номером " + ISSUE_NUMB, () -> {
+            $(withText("#" + ISSUE_NUMB));
         });
     }
 }
