@@ -3,9 +3,9 @@
 *.iml
 
 # Gradle
-gradle
-.gradle
+gradle/
+.gradle/
 build
-gradlew
-gradlew.bat
+/gradlew
+/gradlew.bat
 settings.gradle
