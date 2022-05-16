@@ -17,6 +17,7 @@ public class LambdaTest {
 
     private static final String Repository = "iPhoneSasuke/JU5annotations";
     private static final int Issue_Numb = 12;
+
     @BeforeAll
     public static void browConfig() {
         Configuration.holdBrowserOpen = true;
@@ -45,7 +46,6 @@ public class LambdaTest {
         });
         step("Проверяем наличие Issue  с номером " + Issue_Numb, () -> {
             $(withText("12")).click();
-
         });
     }
 }
